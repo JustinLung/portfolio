@@ -1,174 +1,40 @@
-# Portfolio 🚀
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-This is a personal portfolio website built using **Next.js**, **TypeScript**, **React Three Fiber**, and **Framer Motion** to showcase professional projects, skills, and experience. The project is styled using **TailwindCSS** and managed with **Yarn**.
+## Getting Started
 
-## Table of Contents
-
-- [Demo](#demo)
-- [Features](#features)
-- [Technologies](#technologies)
-- [File Structure](#file-structure)
-- [Environment Variables](#environment-variables)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [License](#license)
-
-## Demo
-
-Check out the live demo of this portfolio project [here](https://justinlung.com/).
-
-## Features
-
-- **3D Animations**: Integrates **React Three Fiber** for interactive 3D experiences.
-- **Smooth Animations**: Utilizes **Framer Motion** for seamless page transitions and animations.
-- **Responsive Design**: Fully responsive and optimized for different screen sizes using **TailwindCSS**.
-- **TypeScript**: Provides static typing for better development experience and safety.
-- **SEO Optimized**: Built-in optimizations for search engine visibility.
-- **Fast Performance**: Powered by **Next.js** for server-side rendering and optimized performance.
-- **DatoCMS**: Headless CMS 
-
-## Technologies
-
-This portfolio project is built with:
-
-- **Next.js**: React framework for server-side rendering and static site generation.
-- **TypeScript**: Superset of JavaScript that adds static typing.
-- **React Three Fiber**: A React renderer for Three.js to create 3D visualizations.
-- **Framer Motion**: A library for animations and page transitions.
-- **TailwindCSS**: Utility-first CSS framework for responsive styling.
-- **Yarn**: Dependency management for fast and reliable builds.
-
-## File Structure
-
-Here’s an overview of the project's file structure:
-
-```
-portfolio/
-├── lib/                     # Utility functions and libraries
-├── public/                  # Static assets such as images, favicons, etc.
-├── scripts/                 # Scripts for automation and setup
-├── src/                     # Source code (components, pages, etc.)
-├── .env                     # Environment variables file (not checked into source control)
-├── .gitignore               # Git ignore file
-├── .graphqlrc.js            # GraphQL configuration
-├── global.d.ts              # Global TypeScript declarations
-├── next-env.d.ts            # Next.js TypeScript environment
-├── next.config.js           # Next.js configuration
-├── package.json             # Project dependencies and scripts
-├── postcss-util-hover.js     # Custom PostCSS hover utilities
-├── postcss.config.js         # PostCSS configuration
-├── tsconfig.json            # TypeScript configuration
-└── yarn.lock                # Yarn lockfile for dependencies
-```
-
-## Environment Variables
-
-The project uses environment variables to handle sensitive information like API keys and endpoints. These should be stored in a `.env` file at the root of the project. **Ensure that this file is not checked into source control.**
-
-### Sample `.env` file:
-
-```env
-# GraphQL API Endpoint for DatoCMS
-DATO_ENDPOINT=https://graphql.datocms.com/
-
-# API Key for DatoCMS
-DATO_API_KEY=your_dato_cms_api_key_here
-```
-
-### Usage in the project:
-
-In the `client.ts` file, the environment variables are accessed as follows:
-
-```typescript
-// client.ts
-import { GraphQLClient } from 'graphql-request';
-import { getSdkWithHooks } from '@lib/generated/sdk';
-
-const nextGraphQlClient = new GraphQLClient(process.env.DATO_ENDPOINT || '', {
-  headers: {
-    Authorization: `Bearer ${process.env.DATO_API_KEY}`,
-  },
-});
-
-// Use this server side, it directly calls the Umbraco GraphQL endpoint
-export const nextClient = getSdkWithHooks(nextGraphQlClient);
-```
-
-Make sure you add your actual `DATO_API_KEY` and `DATO_ENDPOINT` in the `.env` file before running the project.
-
-## Installation
-
-To run the project locally, follow these steps:
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://github.com/JustinLung/Portfolio.git
-   ```
-
-2. **Navigate into the project directory**:
-
-   ```bash
-   cd Portfolio
-   ```
-
-3. **Install dependencies** using Yarn:
-
-   ```bash
-   yarn install
-   ```
-
-4. **Set up environment variables**:
-
-   Create a `.env` file at the root of the project and add your API keys and other sensitive values as shown in the [Environment Variables](#environment-variables) section.
-
-## Usage
-
-### Development Mode
-
-To start the project in development mode:
+First, run the development server:
 
 ```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-This will start the development server, and you can access the portfolio at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Production Build
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-To build the project for production:
+[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-```bash
-yarn build
-```
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
 
-To serve the production build locally:
+This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-yarn start
-```
+## Learn More
 
-## Deployment
+To learn more about Next.js, take a look at the following resources:
 
-This project can be deployed on platforms like **Vercel** or **Netlify**.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
 
-### Deploying to Vercel
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-1. Install the Vercel CLI:
+## Deploy on Vercel
 
-   ```bash
-   yarn global add vercel
-   ```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-2. Run the deployment command:
-
-   ```bash
-   vercel
-   ```
-
-Follow the prompts to deploy the project.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.

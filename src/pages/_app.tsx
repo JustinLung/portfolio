@@ -1,20 +1,11 @@
-import { BaseLayout } from "@/components/features/layout/BaseLayout/BaseLayout";
-import { PageTransition } from "@/components/shared/PageTransition/PageTransition";
-import "@/styles/all.css";
-import { useLenis } from "@/utils/useLenis";
-import { useVhFix } from "@/utils/useVhFix";
-import type { AppProps } from "next/app";
+import { BaseLayout } from "@/components/layout/BaseLayout/BaseLayout"
+import "@/styles/all.css"
+import type { AppProps } from "next/app"
 
 export default function App({ Component, pageProps }: AppProps) {
-  useLenis();
-  useVhFix();
-
   return (
-    <>
-      <BaseLayout>
-        <Component {...pageProps} />
-      </BaseLayout>
-      <PageTransition />
-    </>
-  );
+    <BaseLayout>
+      <Component {...pageProps} />
+    </BaseLayout>
+  )
 }

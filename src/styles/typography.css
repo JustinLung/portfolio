@@ -12,6 +12,7 @@
 
 :root {
   --ff-primary: "Inter";
+  --ff-secondary: "Pirata One";
   /* --ff-secondary: 'Comic Sans MS'; */
 }
 
@@ -19,11 +20,11 @@
   font-family: var(--ff-primary);
 }
 
-/* [class*='ff-s'] {
+ [class*='ff-s'] {
   font-family: var(--ff-secondary);
   font-weight: 400;
 }
-
+/* 
 .ff-p-xxl {
   font-size: 3rem;
   text-transform: uppercase;
@@ -33,4 +34,4 @@
     font-size: 6rem;
     letter-spacing: -0.48px;
   }
-} */
+}  */
