@@ -1,9 +1,0 @@
-.section-header {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: clamp(4.3rem, calc(4.17rem + 0.67vw), 4.84rem);
-
-  @media(--lg) {
-    background: red;
-  }
-}
