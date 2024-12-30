@@ -30,7 +30,12 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"@csstools/postcss-global-data": "^3.0.0",
 		"@studio-freight/lenis": "^1.0.42",
-		"gsap": "^3.12.5"
+		"autoprefixer": "^10.4.20",
+		"gsap": "^3.12.5",
+		"postcss": "^8.4.49",
+		"postcss-csso": "^6.0.1",
+		"postcss-preset-env": "^10.1.3"
 	}
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$lib/styles/all.css';
+	import '../styles/all.css';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Lenis from '$lib/components/shared/Lenis.svelte';
